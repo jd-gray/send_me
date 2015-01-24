@@ -1,6 +1,6 @@
 SendMe
 
-[![Circle CI](https://circleci.com/gh/jd-gray/send_me.svg?style=svg)](https://circleci.com/gh/jd-gray/send_me)
+{<img src="https://circleci.com/gh/jd-gray/send_me.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/jd-gray/send_me]
 
 SendMe is a web application that is designed to help users save money to go on vacation.
 
