@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'shoulda-matchers'
 
 RSpec.describe Vacation, :type => :model do
 	it "has a valid factory" do
@@ -19,4 +20,8 @@ RSpec.describe Vacation, :type => :model do
 		people = FactoryGirl.build(:vacation, total_people: nil)
 		expect(people).to be_invalid
 	end
+	
+	it { is_expected.to ensure_length_of(:description).is_at_most(300)}
+
+
 end
