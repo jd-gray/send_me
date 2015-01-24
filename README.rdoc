@@ -1,5 +1,7 @@
 SendMe
 
+[![Circle CI](https://circleci.com/gh/jd-gray/send_me.svg?style=svg)](https://circleci.com/gh/jd-gray/send_me)
+
 SendMe is a web application that is designed to help users save money to go on vacation.
 
 Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1255500
