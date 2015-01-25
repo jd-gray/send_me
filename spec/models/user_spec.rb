@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'shoulda/matchers'
+require 'shoulda-matchers'
 
 RSpec.describe User, :type => :model do
 
