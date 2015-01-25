@@ -1,0 +1,9 @@
+<h1>Sign Up</h1>
+
+<%= simple_form_for @user, html: { multipart: true } do |f| %>
+	<%= f.input :username, placeholder: "Username" %>
+	<%= f.input :email, placeholder: "Email" %>
+	<%= f.input :password, placeholder: "Password", hint: "No Special Characters" %>
+	<%= f.input :password_confirmation, placeholder: "Confirm Password" %>
+	<%= f.button :submit %>
+<% end %>

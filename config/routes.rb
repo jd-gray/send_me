@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'vacations#index'
 
+  resources :users
   # path for users to sign up
   get '/signup' => 'users#new'
 

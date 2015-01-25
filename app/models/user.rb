@@ -20,11 +20,8 @@ class User < ActiveRecord::Base
 
 	# PASSWORD
 	# user must enter a password
-	validates :password_digest, presence: true
-
 	# user must have a password no shorter then 6 char and no longer then 20 char
-	validates_length_of :password_digest, minimum: 6, maximum: 20
-
+	validates :password, presence: true, length: { in: 6..20 }, confirmation: true
 
 	attr_reader :password
 

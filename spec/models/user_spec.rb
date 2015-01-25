@@ -52,10 +52,10 @@ RSpec.describe User, :type => :model do
 	end
 	
 	# password has to be at least 6 characters long
-	it { is_expected.to ensure_length_of(:password_digest).is_at_least(6) }
+	it { is_expected.to ensure_length_of(:password).is_at_least(6) }
 
 	# password can be no longer then 20 characters
-    it { is_expected.to ensure_length_of(:password_digest).is_at_most(20)}
+    it { is_expected.to ensure_length_of(:password).is_at_most(20)}
 
     # ASSOCIATION
     # it { is_expected.to have_many(:vacations) }
