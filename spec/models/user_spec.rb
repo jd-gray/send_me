@@ -29,4 +29,11 @@ RSpec.describe User, :type => :model do
 	expect{subject.save!}.to raise_error(ActiveRecord::RecordInvalid)
 	end
 	
+	it { is_expected.to validate_uniqueness_of(:email) }
+	
+	# password has to be at least 6 characters long
+	it { is_expected.to ensure_length_of(:password_disest).is_at_least(6) }
+
+	# password can be no longer then 20 characters
+    it { is_expected.to ensure_length_of(:password_digest).is_at_most(20)}
 end
