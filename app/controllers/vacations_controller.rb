@@ -7,7 +7,7 @@ class VacationsController < ApplicationController
 	end
 
 	def show
-
+		vacation_find
 	end
 
 	def new
@@ -17,7 +17,7 @@ class VacationsController < ApplicationController
 	def create
 		@vacation = Vacation.new(vacation_params)
 		if @vacation.save
-			redirect_to root_path 
+			redirect_to vacation_path(@vacation)
 		else 
 			render :new
 		end
