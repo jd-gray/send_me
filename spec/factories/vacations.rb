@@ -3,7 +3,7 @@ FactoryGirl.define do
 	total_cost 1
 	description "MyString"
 	total_people 1
-	title "Sting"
+	title "String"
   end
 
 end
