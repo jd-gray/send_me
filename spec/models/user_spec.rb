@@ -58,5 +58,5 @@ RSpec.describe User, :type => :model do
     it { is_expected.to ensure_length_of(:password).is_at_most(20)}
 
     # ASSOCIATION
-    # it { is_expected.to have_many(:vacations) }
+    it { is_expected.to have_many(:vacations) }
 end

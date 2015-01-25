@@ -28,5 +28,7 @@ RSpec.describe Vacation, :type => :model do
 
 	it { is_expected.to ensure_length_of(:description).is_at_most(300)}
 
+	# ASSOCIATION
+    it { is_expected.to belong_to(:user) }
 
 end

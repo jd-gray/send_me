@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	# has_many :vacations
+	has_many :vacations
 
 	# USERNAME
 	# validates the presence of username
