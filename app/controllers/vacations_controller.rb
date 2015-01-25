@@ -15,9 +15,9 @@ class VacationsController < ApplicationController
 	end
 
 	def create
-		@vacation = Vacation.new
+		@vacation = Vacation.new(vacation_params)
 		if @vacation.save
-			redirect_to @vacation 
+			redirect_to root_path 
 		else 
 			render :new
 		end
@@ -33,7 +33,12 @@ class VacationsController < ApplicationController
 	end
 
 	private
+
 	def vacation_find
 		@vacation = Vacation.find(params[:id])	
+	end
+
+	def vacation_params
+		params.require(:vacation).permit(:total_cost, :total_people, :description)
 	end
 end
