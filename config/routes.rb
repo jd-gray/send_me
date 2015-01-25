@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   root 'vacations#index'
 
+  # path for users to sign up
+  get '/signup' => 'users#new'
+
   resources :vacations
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
