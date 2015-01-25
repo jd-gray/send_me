@@ -21,6 +21,11 @@ RSpec.describe Vacation, :type => :model do
 		expect(people).to be_invalid
 	end
 	
+	it "has a title" do
+		title = FactoryGirl.build(:vacation, title: nil)
+		expect(title).to be_invalid
+	end
+
 	it { is_expected.to ensure_length_of(:description).is_at_most(300)}
 
 

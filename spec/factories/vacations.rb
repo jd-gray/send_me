@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :vacation do
-    total_cost 1
-description "MyString"
-total_people 1
+	total_cost 1
+	description "MyString"
+	total_people 1
+	title "Sting"
   end
 
 end

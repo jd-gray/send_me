@@ -1,8 +1,9 @@
 <h1>New Vacation</h1>
 
 <%= simple_form_for @vacation do |f| %>
-  <%= f.input :description %>
-  <%= f.input :total_cost %>
-  <%= f.input :total_people %>
-  <%= f.button :submit %>
+	<%= f.input :title %>
+	<%= f.input :description %>
+	<%= f.input :total_cost %>
+	<%= f.input :total_people %>
+	<%= f.button :submit %>
 <% end %>
