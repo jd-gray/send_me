@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+######## Heroku settings
+ruby '2.1.3'
+######### Heroku gems
+gem 'rails_12factor'
+
+
 gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,6 +37,8 @@ gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
