@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 		# once user is created, create new session
 		if @user.save
 			session[:user_id] = @user.id.to_s
-			redirect_to root_path
+			redirect_to vacations_path
 		else
 			render :new
 		end
