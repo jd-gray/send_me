@@ -1,4 +1,6 @@
 
 <% @vacations.each do |vacation| %>
-	<%= vacation.title %>
+	<%= link_to (image_tag vacation.image.url(:medium)), vacation %>
+	<%= link_to vacation.title, vacation %>
+	<%= vacation.user.username %>
 <% end %>
