@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'vacations#index'
+  root 'welcome#index'
 
   resources :users
   # path for users to sign up
