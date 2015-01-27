@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-######## Heroku settings
+######### Heroku settings
 ruby '2.1.3'
-######### Heroku gems
+######### AWS/Heroku gems
 gem 'rails_12factor'
-
+gem 'figaro'
+gem 'fog'
 
 gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 
