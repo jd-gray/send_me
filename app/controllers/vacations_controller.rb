@@ -3,43 +3,47 @@ class VacationsController < ApplicationController
 	before_action :vacation_find, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@vacations = Vacation.all 
+		# vacations ordered in created order
+		@vacations = Vacation.all.order("created_at DESC")
 	end
 
 	def show
-		vacation_find
 	end
 
 	def new
-		@vacation = Vacation.new
+		# linking current user to the new method
+		current_user = User.find(session[:user_id])
+		@vacation = current_user.vacations.build
 	end
 
 	def create
-		@vacation = Vacation.new(vacation_params)
+		# current user id links to the vacations create method
+		current_user = User.find(session[:user_id])
+		@vacation = current_user.vacations.build(vacation_params)
 		if @vacation.save
-			redirect_to vacation_path(@vacation)
+			redirect_to @vacation
 		else 
 			render :new
 		end
 	end
 
 	def edit
-		vacation_find
 	end
 
 	def update
-		vacation_find
-		if @vacation.update_attributes(vacation_params)
-			redirect_to vacation_path(@vacation)
+		if @vacation.update(vacation_params)
+			redirect_to @vacation
 		else
 			render :edit
 		end
 	end
 
 	def destroy
-		vacation_find
-		@vacation = Vacation.destroy
-		redirect_to vacations_path
+		@vacation.destroy
+		respond_to do |format|
+			format.html { redirect_to vacations_path }
+      		format.json { head :no_content }
+      	end
 	end
 
 	private
