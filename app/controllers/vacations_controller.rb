@@ -24,12 +24,22 @@ class VacationsController < ApplicationController
 	end
 
 	def edit
+		vacation_find
 	end
 
 	def update
+		vacation_find
+		if @vacation.update_attributes(vacation_params)
+			redirect_to vacation_path(@vacation)
+		else
+			render :edit
+		end
 	end
 
 	def destroy
+		vacation_find
+		@vacation = Vacation.destroy
+		redirect_to vacations_path
 	end
 
 	private

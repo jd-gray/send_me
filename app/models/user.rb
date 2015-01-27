@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 	has_many :vacations
 
+	# has_secure_password
+	# this replaces the attr_reader, password, and authenticate methods
+
 	# USERNAME
 	# validates the presence of username
 	validates_presence_of :username
@@ -41,6 +44,7 @@ class User < ActiveRecord::Base
 	# return self
 	def authenticate
 		if BCrypt::Password.new(self.password_digest) == unencrypted_password
+			# return the entire user object
 			return self
 		else
 			return false

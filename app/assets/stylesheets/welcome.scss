@@ -2,12 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.navbar{
+	background: gray;
+}
 
-#logobox{
-	margin: 0 auto;
-	margin-top: 100px;
-	width: 50%;
-	#welcomelogo {
+#slide1{
+	margin-top: -50px;
+	padding-top: 150px;
+	background: lightgray;
+	height: 700px;
+	border-bottom: 1px solid black;
+	#logobox{
+		margin: 0 auto;
+		width: 50%;
+		#welcomelogo {
+			text-align: center;
+		}
+	}
+	#fronttitle{
 		text-align: center;
+		button{
+			padding: 10px;
+			border: 0;
+			width: 30%;
+			border-radius: 5px;
+			&:focus{
+				outline: 0;
+			}
+		}
+	}
+}
+
+#slide2{
+	
+}
+
+#slide3{
+	border-top: 1px solid black;
+	background: lightgray;
+	border-bottom: 1px solid black;
+}
+
+#slide4{
+	#button{
+		padding-top: 50px;
+		padding-bottom: 50px;
+		text-align: center;
+		button{
+			padding: 10px;
+			width: 40%;
+			border-radius: 5px;
+			border: 0;
+			&:focus{
+				outline: 0;
+			}
+		}
+	}
+}
+
+footer.navbar.navbar-default.navbar-bottom{
+	bottom: 0;
+	padding: 0;
+	margin-bottom: 0;
+	border-radius: 0;
+	ul{
+		margin-left: 40px;
 	}
 }
