@@ -3,9 +3,12 @@ source 'https://rubygems.org'
 ######### Heroku settings
 ruby '2.1.3'
 ######### AWS/Heroku gems
-gem 'rails_12factor'
 gem 'figaro'
 gem 'fog'
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'thin'
+end
 
 gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 
