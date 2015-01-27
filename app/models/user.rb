@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	mount_uploader :imagae, ImageUploader
+	mount_uploader :image, ImageUploader
 	has_many :vacations
 
 	# USERNAME

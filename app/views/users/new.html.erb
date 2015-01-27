@@ -1,6 +1,7 @@
 <h1>Sign Up</h1>
 
 <%= simple_form_for @user, html: { multipart: true } do |f| %>
+	<%= f.input :image %>
 	<%= f.input :username, placeholder: "Username" %>
 	<%= f.input :email, placeholder: "Email" %>
 	<%= f.input :password, placeholder: "Password", hint: "No Special Characters" %>
