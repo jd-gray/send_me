@@ -49,6 +49,6 @@ class VacationsController < ApplicationController
 	end
 
 	def vacation_params
-		params.require(:vacation).permit(:total_cost, :total_people, :description, :title, :image)
+		params.require(:vacation).permit(:total_cost, :total_people, :description, :title, :image, :body)
 	end
 end
