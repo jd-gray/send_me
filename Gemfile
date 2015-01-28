@@ -60,7 +60,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'rspec-rails'
-  gem 'pry'
   # add validation-association matchers
   gem 'shoulda-matchers', require: false
 end
