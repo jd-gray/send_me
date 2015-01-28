@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
-  get 'comments/body'
-
-  root 'welcome#index'
-
   resources :users
   # path for users to sign up
   get '/signup' => 'users#new'
+  # login paths
+  get '/login'     => 'sessions#new'
+  post '/login'    => 'sessions#create'
+  # logout path
+  delete '/logout' => 'sessions#destroy'
 
-  resources :vacations
-  resources :comments
+  resources :vacations do 
+    resources :comments
+  end
+
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

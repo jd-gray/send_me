@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 	# this method provides user authentication
 	# if the user enters the password that matches encrypted password
 	# return self
-	def authenticate
+	def authenticate(unencrypted_password)
 		if BCrypt::Password.new(self.password_digest) == unencrypted_password
 			# return the entire user object
 			return self
