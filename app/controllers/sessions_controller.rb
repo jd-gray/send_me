@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 	# for the login view
 	def new
+		@disable_nav = true
 	end
 
 	def create

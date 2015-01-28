@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 	end
 	
 	def new
+		@disable_nav = true
 		@user = User.new
 	end
 
