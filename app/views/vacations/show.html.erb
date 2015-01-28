@@ -1,5 +1,15 @@
-	<%= @vacation.title %> 
-	<%= @vacation.total_cost %> 
-	<%= @vacation.total_people %> 
-	<%= @vacation.description %>
-	<%= image_tag @vacation.image.url(:medium) %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div>
+    	<%= image_tag @vacation.image.url(:medium) %>
+      <h1><%= @vacation.title %></h1>
+    	<p><%= @vacation.total_cost %>
+    	<%= @vacation.total_people %></p>
+    	<p><%= @vacation.description %></p>  	
+    </div>
+    <div>
+      <%= link_to "Edit", edit_vacation_path %>
+      <%= link_to "Delete", @vacation, method: :delete, data: {confirm: "'Sure you want to delete this memory?"} %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class VacationsController < ApplicationController
 
 	before_action :vacation_find, only: [:show, :edit, :update, :destroy]
+	# before_action :logged_in?, except: :index
 
 	def index
 		# vacations ordered in created order
@@ -42,8 +43,8 @@ class VacationsController < ApplicationController
 		@vacation.destroy
 		respond_to do |format|
 			format.html { redirect_to vacations_path }
-      		format.json { head :no_content }
-      	end
+      format.json { head :no_content }
+    end
 	end
 
 	private

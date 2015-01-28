@@ -1,8 +1,12 @@
-<%= simple_form_for @vacation do |f| %>
-	<%= f.input :image %>
-	<%= f.input :title %>
-	<%= f.input :description %>
-	<%= f.input :total_cost %>
-	<%= f.input :total_people %>
-	<%= f.button :submit %>
-<% end %>
+<div class="row">
+  <div>
+    <%= simple_form_for @vacation do |f| %>
+    	<%= f.input :image %>
+    	<%= f.input :title %>
+    	<%= f.input :description %>
+    	<%= f.input :total_cost %>
+    	<%= f.input :total_people %>
+    	<%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
