@@ -16,7 +16,7 @@
   </div>
 </div>
 <div>
-    <%= simple_form_for @comments do |f| %>
+    <%= simple_form_for ([ @vacation, @comment ]) do |f| %>
       <%= f.input :body %>
       <%= f.submit :submit %>  
     <% end %>

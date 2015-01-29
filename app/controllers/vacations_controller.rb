@@ -9,7 +9,9 @@ class VacationsController < ApplicationController
 	end
 
 	def show
-		@comments = Comment.all 
+		@comments = Comment.all
+		@comment = Comment.new
+		 
 	end
 
 	def new
