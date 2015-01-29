@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
 		@comment.post_id = @vacation.id
 
 		if @comment.save
-			redirect_to post_path(@vacation)
+			redirect_to vacation_path(@vacation)
 		else
-			redirect_to post_path(@vacation)
+			redirect_to vacation_path(@vacation)
 		end  	
   end
 

@@ -1,71 +1,53 @@
-class User < ActiveRecord::Base
-	provider 
-	uid
-	name 
-	oauth_token 
-	oauth_expires_at:datetime
+ class User < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 	has_many :vacations
 
-	def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
-    end
-  end
+	# has_secure_password
+	# this replaces the attr_reader, password, and authenticate methods
 
-	# # has_secure_password
-	# # this replaces the attr_reader, password, and authenticate methods
+	# USERNAME
+	# validates the presence of username
+	validates_presence_of :username
 
-	# # USERNAME
-	# # validates the presence of username
-	# validates_presence_of :username
+	# EMAIL
+	# make sure user enters an email
+	validates :email, presence: true
 
-	# # EMAIL
-	# # make sure user enters an email
-	# validates :email, presence: true
+	# email is to be no longer then 100 characters
+	validates_length_of :email, maximum: 100
 
-	# # email is to be no longer then 100 characters
-	# validates_length_of :email, maximum: 100
+	# make sure user enters a valid email address
+	validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
-	# # make sure user enters a valid email address
-	# validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+	# email must be unique and not the same as other users
+	validates_uniqueness_of :email
 
-	# # email must be unique and not the same as other users
-	# validates_uniqueness_of :email
+	# PASSWORD
+	# user must enter a password
+	# user must have a password no shorter then 6 char and no longer then 20 char
+	validates :password, presence: true, length: { in: 6..20 }, confirmation: true
 
-	# # PASSWORD
-	# # user must enter a password
-	# # user must have a password no shorter then 6 char and no longer then 20 char
-	# validates :password, presence: true, length: { in: 6..20 }, confirmation: true
+	attr_reader :password
 
-	# attr_reader :password
+	def password=(unencrypted_password)
+		unless unencrypted_password.empty?
+			# store the password in memory
+			@password = unencrypted_password
+			# using BCrypt to encrypt the plain text password
+			# after encryption, store in database
+			self.password_digest = BCrypt::Password.create(unencrypted_password)
+		end
+	end
 
-
-
-	# def password=(unencrypted_password)
-	# 	unless unencrypted_password.empty?
-	# 		# store the password in memory
-	# 		@password = unencrypted_password
-	# 		# using BCrypt to encrypt the plain text password
-	# 		# after encryption, store in database
-	# 		self.password_digest = BCrypt::Password.create(unencrypted_password)
-	# 	end
-	# end
-
-	# # this method provides user authentication
-	# # if the user enters the password that matches encrypted password
-	# # return self
-	# def authenticate(unencrypted_password)
-	# 	if BCrypt::Password.new(self.password_digest) == unencrypted_password
-	# 		# return the entire user object
-	# 		return self
-	# 	else
-	# 		return false
-	# 	end
-	# end
+	# this method provides user authentication
+	# if the user enters the password that matches encrypted password
+	# return self
+	def authenticate(unencrypted_password)
+		if BCrypt::Password.new(self.password_digest) == unencrypted_password
+			# return the entire user object
+			return self
+		else
+			return false
+		end
+	end
 end
