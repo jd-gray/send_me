@@ -42,6 +42,10 @@ gem 'mini_magick'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
+
 
 
 # Use Unicorn as the app server
