@@ -13,6 +13,11 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+      <% if logged_in? %>
+        <li><%= link_to 'SendMe', vacations_path %></li>
+      <% end %>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
         <li><%= link_to current_user.username, user_path(current_user.id) %></li>
