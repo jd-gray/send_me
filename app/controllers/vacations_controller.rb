@@ -43,8 +43,8 @@ class VacationsController < ApplicationController
 		@vacation.destroy
 		respond_to do |format|
 			format.html { redirect_to vacations_path }
-      format.json { head :no_content }
-    end
+      		format.json { head :no_content }
+    	end
 	end
 
 	private
