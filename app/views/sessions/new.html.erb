@@ -6,7 +6,7 @@
 		<div class="panel-body">
 			<%= simple_form_for :login do |f| %>
 				<%= f.input :email, placeholder: "Email", required: true %>
-				<%= f.input :password, placeholder: "Password", input_html: { maxlength: 20 } %>
+				<%= f.input :password, placeholder: "Password", required: true, input_html: { maxlength: 20 } %>
 				<%= f.button :submit %>
 			<% end %>
 			<%= button_to "Back", root_path, :class => "button-primary", :method => :get  %>

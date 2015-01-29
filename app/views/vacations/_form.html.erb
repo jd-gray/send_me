@@ -1,7 +1,7 @@
 <div class="row">
   <div>
     <%= simple_form_for @vacation do |f| %>
-    	<%= f.input :image %>
+    	<%= f.input :image, required: true %>
     	<%= f.input :title %>
     	<%= f.input :description %>
     	<%= f.input :total_cost %>
