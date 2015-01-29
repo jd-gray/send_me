@@ -1,14 +1,16 @@
 <div class="row">
-  <div>
-    <ul>
+  <div><!-- class="thumbnail"-->
+    <!-- <ul> -->
       <% @vacations.each do |vacation| %>
-        <li class="col-md-3">
+        <div class="col-lg-4 col-sm-6 col-xs-12">
         	<%= link_to (image_tag vacation.image.url(:medium)), vacation, :class => "thumbnail img-responsive "  %> <!--, :class => "thumbnail image-responsive col-md-3" -->
-        	<%= link_to vacation.title, vacation %>
-        	<%= vacation.user.username %>
-        </li> 
+        	<div>
+          <%= link_to vacation.title, vacation %>
+        	<p><%= vacation.user.username %></p>
+          </div>
+        </div> 
       <% end %>
-    </ul>
+    <!-- </ul> -->
   </div>
 </div>
 
