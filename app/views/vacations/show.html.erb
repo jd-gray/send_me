@@ -15,3 +15,9 @@
     </div>
   </div>
 </div>
+<div>
+    <%= simple_form_for @comments do |f| %>
+      <%= f.input :body %>
+      <%= f.submit :submit %>  
+    <% end %>
+  </div>
