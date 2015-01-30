@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'masonry-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

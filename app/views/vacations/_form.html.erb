@@ -1,14 +1,27 @@
-<div class="col-md-12 col-md-offset">
-    <div class="panel panel-default">
-        <div class="panel-body">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit Vacation</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Share a Story</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
             <%= simple_form_for @vacation do |f| %>
-            	<%= f.input :image, required: true %>
-            	<%= f.input :title %>
-            	<%= f.input :description %>
-            	<%= f.input :total_cost %>
-            	<%= f.input :total_people %>
-            	<%= f.button :submit %>
-            <% end %>
-        </div>
+                <%= f.input :image, required: true %>
+                <%= f.input :title %>
+                <%= f.input :description %>
+                <%= f.input :total_cost %>
+                <%= f.input :total_people %>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <%= f.button :submit %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <% end  %>
+      </div>
+    </div>
   </div>
 </div>

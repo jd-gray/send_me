@@ -1,6 +1,6 @@
 class VacationsController < ApplicationController
 
-	before_action :vacation_find, only: [:show, :edit, :update, :destroy]
+	before_action :vacation_find, only: [:show, :update, :destroy]
 	# before_action :logged_in?, except: :index
 
 	def index
@@ -32,6 +32,9 @@ class VacationsController < ApplicationController
 	end
 
 	def edit
+		if @vacation.user_id === current_user.id
+			vacation_find
+		end
 	end
 
 	def update

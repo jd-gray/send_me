@@ -2,51 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.col-lg-4.col-sm-6.col-xs-12{
+// Vacation's index CSS \\
+div#vacations.transitions-enabled.centered.clearfix.masonry{
+    margin: 0 auto;
+}
 
-    padding: none;
-    
+div.box.panel.panel-default.masonry-brick{
+    margin: 5px;
+}
 
-    
-    a.thumbnail.img-responsive{ 
-        img{
-            width: 100%;
-            height: 100%;
-        }
-        img:hover{
-            background-color: rgba(10,10,10,.7);
-        }
-    }
-    
-    div { 
-        a{
-            top: 0;
-            left: 0;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            padding-top: 25%;
-            font-size: 30px;
-            text-align: center;
-            color: white;
-            opacity: 0;
-        }
-        p{
-            text-align: right;
-        }
-    }
-
-    div { 
-        a:hover{
-            opacity: 1;
-         } 
+div.panel-footer{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    &:hover{
+        opacity: 1;
+        a{text-shadow: 0 0 1em rgba(1,1,1, 0.6);}
     }
 }
 
-.row.vacation-show{
-    background-color: rgba(20,20,20,.8);
-}
-
-#vacation-options{
-    color: white;
+// Vacation's show CSS \\
+#vacation-show{
+    text-align: center;
+    background-color: rgba(20,20,20, .8);
+    color:white;
+    #show-image{
+        height: 100%;
+    }
 }

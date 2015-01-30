@@ -1,4 +1,4 @@
-# class SessionsController < ApplicationController
+class SessionsController < ApplicationController
 # 	# for the login view
  	def new
  		@disable_nav = true
@@ -19,7 +19,7 @@
  		session.delete(:user_id)
  		redirect_to root_path
  	end
- end
+ 
 
 
 end

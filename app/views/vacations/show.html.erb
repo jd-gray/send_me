@@ -1,21 +1,28 @@
-<div class="row vacation-show">
-  <div class="col-md-4 col-md-offset-4">
-    <div>
-    	<%= image_tag @vacation.image.url(:medium) %>
+<div class="row">
+  <div class="container">
+    <div id="vacation-show">
+      <%= image_tag @vacation.image.url(:medium), :id=>"show-image"%>
+
       <h1><%= @vacation.title %></h1>
-    	<p><%= @vacation.total_cost %>
-    	<%= @vacation.total_people %></p>
-    	<p><%= @vacation.description %></p>  	
+    	<p>$<%= @vacation.total_cost %></p>
+    	<p>Number of People <%= @vacation.total_people %></p>
+    </div>
+    <div>
+    	<p>Story: <%= @vacation.description %></p>  	
     </div>
     <div id="vacation-options">
+      
+      
       <%= link_to "Edit", edit_vacation_path %>
       <%= link_to "Delete", @vacation, method: :delete, data: {confirm: "'Sure you want to delete this memory?"} %>
-      <%= link_to "Profile", user_path %>
-      <%= link_to "Back", vacations_path %>
+      
+      <%= link_to "Add Vacation", new_vacation_path %>
+      <%= link_to "See All", vacations_path %>
     </div>
   </div>
 </div>
-<div>
+<div class="row">
+  <div class="container">
     <%= simple_form_for ([ @user, @vacation, @comment ]) do |f| %>
       <%= f.input :body %>
       <%= f.submit :submit %>  
@@ -29,3 +36,4 @@
         <% end %>
       </div>
   </div>
+</div>
