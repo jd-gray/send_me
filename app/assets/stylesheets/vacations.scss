@@ -3,30 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // Vacation's index CSS \\
-div#vacations.transitions-enabled.centered.clearfix.masonry{
-    margin: 0 auto;
-}
+div.container#vacation-index{margin-top: 100px;}
 
-div.box.panel.panel-default.masonry-brick{
-    margin: 5px;
-}
-
-div.panel-footer{
-    top: 0;
-    left: 0;
-    position: absolute;
-    width:100%;
-    height:100%;
+div#vacations.transitions-enabled{
     margin: 0 auto;
-    text-align: center;
-    opacity: 0;
-    &:hover{
-        opacity: 1;
-        a{text-shadow: 0 0 1em rgba(1,1,1, 0.6);}
+    width: 300px;
+    div.box.panel.panel-default.masonry-brick{
+        div.panel-footer{
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            background-color: rgba(125,125,175, .19);
+            color: white;
+        .box{
+            width: 300px;
+            overflow: hidden;
+            margin: 2px;
+        }
+            a{
+                    text-shadow: 0 0 1em rgba(1,1,1, 0.6);
+                    text-decoration: none;
+                    font-size: 30px;
+                    &:hover{
+                        color: white;
+                    }
+            }
+
+            p{
+                    position: relative;
+                    bottom: 5px;
+                    float: right;
+            }
+
+            &:hover{
+                opacity: 1;
+                }
+                
+            
+        }
     }
 }
-
 // Vacation's show CSS \\
+div.row#vacation-margin{margin-top: 100px;}
 #vacation-show{
     text-align: center;
     background-color: rgba(20,20,20, .8);
