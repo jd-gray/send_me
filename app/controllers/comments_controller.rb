@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @vacation = Vacation.find(params[:vacation_id])
+    # @user = User.find(params([:username])
     @comment = Comment.create(comment_params)
     @comment.user_id = current_user.id
     @comment.vacation_id = @vacation.id
@@ -28,6 +29,6 @@ class CommentsController < ApplicationController
 
  private
   def comment_params
-  	params.require(:comment).permit(:body)
+  	params.require(:comment).permit(:body, :user_id, :vacation_id)
   end
 end

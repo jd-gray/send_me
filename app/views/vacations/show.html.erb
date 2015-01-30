@@ -16,8 +16,16 @@
   </div>
 </div>
 <div>
-    <%= simple_form_for ([ @vacation, @comment ]) do |f| %>
+    <%= simple_form_for ([ @user, @vacation, @comment ]) do |f| %>
       <%= f.input :body %>
       <%= f.submit :submit %>  
     <% end %>
+      <div class="comment">
+      <%= @comments.each do |comment| %>
+        <div> <%= comment.body %></div>
+        <div><%= comment.user.username %></div>
+        <div><%= time_ago_in_words(comment.created_at)%></div>
+      
+        <% end %>
+      </div>
   </div>
