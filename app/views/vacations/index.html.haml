@@ -1,0 +1,9 @@
+.container
+	#vacations.transitions-enabled
+		-@vacations.each do |vacation|
+			.box.panel.panel-default
+				= link_to (image_tag vacation.image.url(:medium)), vacation
+				.panel-footer
+					%p
+					= link_to vacation.title, vacation
+					= vacation.user.username
