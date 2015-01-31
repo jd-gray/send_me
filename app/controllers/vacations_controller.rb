@@ -1,7 +1,6 @@
 class VacationsController < ApplicationController
-
-	before_action :vacation_find, only: [:show, :update, :destroy]
-	# before_action :logged_in?, except: :index
+	before_action :vacation_find, only: [:show, :edit, :update, :destroy]
+	# before_action :user_authorized?
 
 	def index
 		# vacations ordered in created order
@@ -10,8 +9,7 @@ class VacationsController < ApplicationController
 
 	def show
 		@comments = Comment.all
-		@comment = Comment.new
-		 
+		@comment = Comment.new	 
 	end
 
 	def new
@@ -32,9 +30,6 @@ class VacationsController < ApplicationController
 	end
 
 	def edit
-		if @vacation.user_id === current_user.id
-			vacation_find
-		end
 	end
 
 	def update

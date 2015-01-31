@@ -153,6 +153,8 @@ GEM
     formatador (0.2.5)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    haml (4.0.6)
+      tilt
     hike (1.2.3)
     httparty (0.13.3)
       json (~> 1.8)
@@ -297,10 +299,14 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   fog
+<<<<<<< HEAD
   httparty
+=======
+  haml (~> 4.0.6)
+>>>>>>> 1e5f5dc98925705f7a372e1637fe29c71be023fb
   jbuilder (~> 2.0)
   jquery-rails
-  masonry-rails
+  masonry-rails (~> 0.2.4)
   mini_magick
   pg
   rails (= 4.2.0)
