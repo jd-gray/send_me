@@ -1,7 +1,5 @@
 module StaticPagesController < ApplicationController
-	include StaticPagesHelper
-	
-
+	include WelcomeHelper
 end
 
 	

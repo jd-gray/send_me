@@ -299,11 +299,8 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   fog
-<<<<<<< HEAD
-  httparty
-=======
   haml (~> 4.0.6)
->>>>>>> 1e5f5dc98925705f7a372e1637fe29c71be023fb
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   masonry-rails (~> 0.2.4)
