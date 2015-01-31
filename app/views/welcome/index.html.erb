@@ -12,6 +12,21 @@
 		<br/>
 		<button>Start Planning Your Next Vacation Now!</button>
 	</div>
+<!-- checking the weather from open weather -->
+	<% if params[:q] !=nil %>
+		<%= @weather['name'] %>
+		<%= @weather["weather"][0]["description"] %>
+		<%= @degree_f %>&deg;F
+		<img src="<%= "http://openweathermap.org/img/w/#{@picture}.png" %>" class = "img-responsive center-block weather-pic">
+	<% end %>
+
+	<%= form_tag root_path, method: 'get' do %>
+		<%= text_field_tag(:q, nil, placeholder:'Where do you want to go?') %>
+		<%= submit_tag "search", class: "btn btn-primary" %>
+	<% end %>
+
+
+
 </div>
 
 <div id="slide2">

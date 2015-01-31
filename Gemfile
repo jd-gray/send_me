@@ -10,6 +10,7 @@ group :production, :staging do
   gem 'thin'
 end
 
+gem 'httparty'
 gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -53,6 +53,12 @@ class VacationsController < ApplicationController
     	end
 	end
 
+
+
+		
+	
+
+
 	private
 
 	def vacation_find
