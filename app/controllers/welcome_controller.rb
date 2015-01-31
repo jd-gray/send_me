@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
 		if params[:q] != nil
 			get_weather(params[:q])
 		end
+
 	end
 
 
