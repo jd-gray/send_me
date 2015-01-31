@@ -1,15 +1,19 @@
 class Vacation < ActiveRecord::Base
-	# validates :pattern, presence: true
-	mount_uploader :image, ImageUploader
-	belongs_to :user
-	has_many :comments
 
 	validates_presence_of :total_cost, :total_people, :description, :title
-  	validates_length_of :description, maximum: 300
+	validates_length_of :description, maximum: 300
 
- #  	def as_json(options={})
- #  		super(:except => [:created_at, :updated_at]),
- #  			:methods => [:description]
- #  		)
-	# end
+  def description
+    "This vacation for #{total_people} was only #{total_cost}!"
+  end
+
+  def as_json(options={})
+    super(:except => [:user_id, :create_at, :updated_at], :methods => [:description])
+  end
+
+  mount_uploader :image, ImageUploader
+    
+  belongs_to :user
+  has_many :comments
+
 end
