@@ -8,7 +8,7 @@ module API
 
 			def index
 				vacations = Vacation.all
-				respond_with vacations {message: 'Hellow there!'}
+				respond_with vacations, {message: 'Hellow there!'}
 			end
 
 			def show
