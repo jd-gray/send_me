@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   # API routes
-  namespace :api, defaults: { format: "json"} do
-    resources :vacations, only: [:index, :show, :create, :update, :destroy]
+  namespace :api, defaults: { format: "json"} do #, :contraints => {:subdomain => "api"}, path: '/'
+    namespace :v1 do
+      resource :users do
+        resources :vacations, only: [:index, :show, :create, :update, :destroy]
+      end
+    end
   end
 
   resources :vacations do 
