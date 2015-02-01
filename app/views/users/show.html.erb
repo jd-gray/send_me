@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h2 class="text-center">Take a break: <%= current_user.username %></h2>
+					<h2 class="text-center">Hello <%= current_user.username %>!</h2>
 				</div>
 
 				<div class="panel-body">
@@ -19,18 +19,31 @@
 
 	<div class="col-md-6">
 		<div class="row">
-			<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="text-center">Posted Vacations</h3>
-					</div>
-					<div class="panel-body">
-						<% @user.vacations.each do |vacation| %>
-							<strong><p class="text-center"><%= vacation.title %></p></strong>
-							<p class="text-center"><%= vacation.description %></p>
-						<% end %>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="text-center">Posted Vacations</h3>
+						</div>
+						<div class="panel-body">
+							<% @user.vacations.each do |vacation| %>
+								<strong><p><%= link_to vacation.title, vacation %></p></strong>
+								<p><%= vacation.description %></p>
+							<% end %>
+						</div>
 					</div>
 				</div>
-
+			</div>
+			<div class="col-md-14">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="text-center">Comments</h3>
+					</div>
+					<div class="panel-body">
+						<%= @user.comments.each do |comment| %>
+							<p><%= comment.body %></p>
+						<% end %>
+					</div>
+				</div>	
 			</div>
 		</div>
 	</div>

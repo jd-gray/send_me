@@ -1,5 +1,7 @@
 class Vacation < ActiveRecord::Base
 	# validates :pattern, presence: true
+	acts_as_votable
+	
 	mount_uploader :image, ImageUploader
 	belongs_to :user
 	has_many :comments

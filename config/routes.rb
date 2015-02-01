@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :vacations do 
+    member do
+      put "like", to: "vacations#upvote"
+    end
     resources :comments
   end
 
