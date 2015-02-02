@@ -6,4 +6,9 @@
 				.panel-footer
 					%p
 					= link_to vacation.title, vacation
+					%p
+					= image_tag vacation.user.image.url(:small)
 					= vacation.user.username
+					|
+					.glyphicon.glyphicon-heart
+					= vacation.get_upvotes.count

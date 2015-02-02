@@ -11,6 +11,8 @@
 						<p class="text-center"><%= image_tag @user.image.url(:medium) %></p>
 						<p class="text-center"><%= @user.username %></p>
 						<p class="text-center"><%= @user.email %></p>
+						<%= link_to "Edit Account", edit_user_path, class: "btn btn-primary" %>
+						<%= link_to "Delete Account", :user, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 					</div>
 				</div>
 			</div>
@@ -39,7 +41,7 @@
 						<h3 class="text-center">Comments</h3>
 					</div>
 					<div class="panel-body">
-						<%= @user.comments.each do |comment| %>
+						<% @user.comments.each do |comment| %>
 							<p><%= comment.body %></p>
 						<% end %>
 					</div>

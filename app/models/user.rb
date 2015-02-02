@@ -1,7 +1,7 @@
  class User < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
-	has_many :vacations
-	has_many :comments
+	has_many :vacations, dependent: :destroy
+	has_many :comments, dependent: :destroy
 
 	# has_secure_password
 	# this replaces the attr_reader, password, and authenticate methods
