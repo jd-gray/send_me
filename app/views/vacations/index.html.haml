@@ -3,6 +3,14 @@
   %input{:type => "text"}
   %button.btn.btn-primary Search
 
+.text-center
+  - if params[:q] !=nil
+    = @vacation['title']
+    = @picture['image_url']
+    %img.
+
+
+
 .container
   #vacations.transitions-enabled
     -@vacations.each do |vacation|
