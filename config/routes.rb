@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: "json"} do #, :contraints => {:subdomain => "api"}, path: '/'
     namespace :v1 do
       resource :users, only: :index do
-        resources :vacations, only: [:index, :show, :create, :update, :destroy]
+        resources :vacations, only: [:index, :show] #, :create, :update, :destroy]
       end
     end
   end

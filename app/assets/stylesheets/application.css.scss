@@ -18,6 +18,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
 ul {
     list-style: none;
     padding: 0;

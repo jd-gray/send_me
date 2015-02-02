@@ -1,20 +1,18 @@
-
 <div id="slide1">
 	<!-- Logo Box -->
-	<div class="jumbotron" id="logobox">
-		<h1 id="welcomelogo">SendMe Logo</h1>
+	<div id="logobox">
+		<h1 id="welcomelogo"><%= image_tag("unnamed.png", :alt => "face", :height => "400px", :width => "500px") %></h1>
 	</div>
 
 	<div id="fronttitle">
-		<h1>SendMe</h1>
+		<h2><strong>We help you save up for life's greatest adventures, vacations!</strong></h2>
 		<br/>
-		<p>We help you save up for life's greatest adventures, vacations!</p>
-		<br/>
-		<button>Start Planning Your Next Vacation Now!</button>
+		<%= link_to "Start Planning Your Next Vacation Now!", new_user_path, class: "mainbtn btn btn-primary" %>
 	</div>
 <!-- checking the weather from open weather -->
 <div class="text-center">
-<h1>Check the weather in your vacation spot</h1>
+<br/>
+<h5>Check the weather in your vacation spot</h5>
 </div>
 <div class="text-center" id="search_location">
 	<% if params[:q] !=nil %>
@@ -27,13 +25,11 @@
 	<% end %>
 	<div class="search-input">
 	<%= form_tag root_path, method: 'get' do %>
-		<%= text_field_tag(:q, nil, placeholder:'I want to go to..') %>
-		<%= submit_tag "search", class: "btn btn-primary" %>
+		<%= text_field_tag(:q, nil, placeholder:'    I want to go to..') %>
+		<%= submit_tag "Search", class: "btn btn-primary" %>
 	<% end %>
 	</div>
 </div>
-
-
 
 </div>
 
@@ -68,27 +64,28 @@
 
 <div id="slide3">
 	<h2 class="text-center" id="testimonials">Testimonials</h2>
+	<br/>
 	<div class="center">
 		<div class="row">
 			<div class="col-md-4">
 				<div class="text-center">
-					<%= image_tag("face.png", :alt => "face", :height => "200px") %>
-					<h3>Insert Name</h3>
-					<p>Occupy deep v keytar, PBRB meditation DIY drinking vinegar Pinterest direct trade listicle tilde paleo 90's try-hard. Freegan kale chips gluten-free, blog slow-carb cliche craft beer 8-bit Thundercats street art Intelligentsia wolf +1 paleo.</p>
+					<%= image_tag("keef.jpg", :alt => "face", :height => "200px") %>
+					<h3>Chief Keef</h3>
+					<p>"I been ballin' so damn hard I swear I think that I'm Kobe."</p>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="text-center">
-					<%= image_tag("face.png", :alt => "face", :height => "200px") %>
-					<h3>Insert Name</h3>
-					<p>Occupy deep v keytar, PBRB meditation DIY drinking vinegar Pinterest direct trade listicle tilde paleo 90's try-hard. Freegan kale chips gluten-free, blog slow-carb cliche craft beer 8-bit Thundercats street art Intelligentsia wolf +1 paleo.</p>
+					<%= image_tag("randy.jpeg", :alt => "face", :height => "200px") %>
+					<h3>Randy Moss</h3>
+					<p>"Straight Cash Homie"</p>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="text-center">
-					<%= image_tag("face.png", :alt => "face", :height => "200px") %>
-					<h3>Insert Name</h3>
-					<p>Occupy deep v keytar, PBRB meditation DIY drinking vinegar Pinterest direct trade listicle tilde paleo 90's try-hard. Freegan kale chips gluten-free, blog slow-carb cliche craft beer 8-bit Thundercats street art Intelligentsia wolf +1 paleo.</p>
+					<%= image_tag("cr7.jpg", :alt => "face", :height => "200px") %>
+					<h3>Cristiano Ronaldo</h3>
+					<p>"People jeer me because I'm good-looking, rich, and a great player."</p>
 				</div>
 			</div>
 		</div>
@@ -97,6 +94,7 @@
 
 <div id="slide4">
 	<div id="button">
-		<button>Start Planning Your Next Vacation Now!</button>
+		<%= link_to "Start Planning Your Next Vacation Now!", new_user_path, class: "mainbtn btn btn-primary" %>
 	</div>
 </div>
+

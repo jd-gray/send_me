@@ -8,11 +8,15 @@
 
 #slide1{
 	margin-top: -50px;
-	padding-top: 150px;
-	background: lightgray;
-	height: 700px;
+	padding-top: 40px;
+	background-image: url("slide1.jpg");
+	background-size: 120%;
+	height: 800px;
 	border-bottom: 1px solid black;
 	#logobox{
+		img {
+			border-radius: 10px;
+		}
 		margin: 0 auto;
 		width: 50%;
 		#welcomelogo {
@@ -21,8 +25,10 @@
 	}
 	#fronttitle{
 		text-align: center;
-		button{
+		.mainbtn{
 			padding: 10px;
+			color: white;
+			background-color: #4183D7;
 			border: 0;
 			width: 30%;
 			border-radius: 5px;
@@ -33,15 +39,34 @@
 	}
 }
 
+input#q {
+	height: 40px;
+	width: 250px;
+	outline: 0;
+	border-radius: 5px;
+	border: 0;
+}
 #slide2{
+	padding-top: 20px;
 	height: 450px;
+	img {
+		width: 250px;
+	}
 }
 
 #slide3{
+	padding-top: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
 	border-top: 1px solid black;
-	background: lightgray;
+	background: #4183D7;
 	border-bottom: 1px solid black;
 	height: 500px;
+	img {
+		border-radius: 40px;
+		border: 1px solid white;
+	}
 }
 
 #slide4{
@@ -49,11 +74,13 @@
 		padding-top: 50px;
 		padding-bottom: 50px;
 		text-align: center;
-		button{
+		.mainbtn{
 			padding: 10px;
-			width: 40%;
-			border-radius: 5px;
+			color: white;
+			background-color: #4183D7;
 			border: 0;
+			width: 30%;
+			border-radius: 5px;
 			&:focus{
 				outline: 0;
 			}

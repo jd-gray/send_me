@@ -7,7 +7,7 @@ module API
 	    respond_to :json
 
 			def index
-				vacations = Vacation.all
+				vacations = Vacation.where({  })
 				respond_with vacations
 			end
 
