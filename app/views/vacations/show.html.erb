@@ -12,6 +12,9 @@
           <p>Vacation Cost: $<%= @vacation.total_cost %></p>
           <p>Number of People: <%= @vacation.total_people %></p>
           <p>Description: <%= @vacation.description %></p> 
+          <%= link_to like_vacation_path(@vacation), method: :put, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-heart"><%= @vacation.get_upvotes.size %></span>
+          <% end %>
         </div>
       </div>
       <div class="panel-footer">
@@ -33,7 +36,7 @@
         <% end %>
       </div>
       <div class="panel-body">
-        <%= @comments.each do |comment| %>
+        <% @comments.each do |comment| %>
           <div><%= comment.body %></div>
           <div><%= image_tag current_user.image.url(:small) %><%= comment.user.username %> | <%= time_ago_in_words(comment.created_at)%></div>
           <br/>
@@ -43,8 +46,6 @@
   </div>
 </div>
 
-<%= link_to like_vacation_path(@vacation), method: :put, class: "btn btn-default" do %>
-  <span id="glyphicon glyphicon-heart"><%= @vacation.get_upvotes.size %></span>
-<% end %>
+
       
 

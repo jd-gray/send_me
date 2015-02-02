@@ -11,10 +11,10 @@ RSpec.describe Vacation, :type => :model do
 		expect(cost).to be_invalid 
 	end
 
-	it "has a description of the vacation" do
-		description = FactoryGirl.build(:vacation, description: nil)
-		expect(description).to be_invalid
-	end
+	# it "has a description of the vacation" do
+	# 	description = FactoryGirl.build(:vacation, description: nil)
+	# 	expect(description).to be_invalid
+	# end
 
 	it "has a total people amount" do
 		people = FactoryGirl.build(:vacation, total_people: nil)
@@ -26,7 +26,7 @@ RSpec.describe Vacation, :type => :model do
 		expect(title).to be_invalid
 	end
 
-	it { is_expected.to ensure_length_of(:description).is_at_most(300)}
+	# it { is_expected.to ensure_length_of(:description).is_at_most(300)}
 
 	# ASSOCIATION
     it { is_expected.to belong_to(:user) }

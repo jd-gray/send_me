@@ -8,6 +8,12 @@ RSpec.describe VacationsController, :type => :controller do
 		expect(response).to have_http_status(200)
 	end
 
+
+it 'responds with success' do
+      expect(response).to be_success
+    end
+
+
 	# it "should get new" do 
 	# 	get :new
 	# 	assert_response :success

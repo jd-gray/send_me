@@ -25,14 +25,13 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def edit
-		
+	def edit	
 	end
 
 	def update
 		# once user updates profile directed to specified path
 		if @user.update(user_params)
-			redirect_to root_path
+			redirect_to vacations_path
 		else
 			render :edit
 		end
