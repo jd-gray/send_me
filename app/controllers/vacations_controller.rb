@@ -1,5 +1,5 @@
 class VacationsController < ApplicationController
-	before_action :vacation_find, only: [:show, :edit, :update, :destroy]
+	before_action :vacation_find, only: [:show, :edit, :update, :destroy, :upvote]
 	# before_action :user_authorized?
 
 	def index
@@ -48,10 +48,11 @@ class VacationsController < ApplicationController
     	end
 	end
 
-
-
-		
-	
+	def upvote
+		current_user = User.find(session[:user_id])
+		@vacation.upvote_by current_user
+		redirect_to :back
+	end
 
 
 	private

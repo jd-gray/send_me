@@ -1,4 +1,11 @@
 class Vacation < ActiveRecord::Base
+  
+	# validates :pattern, presence: true
+	acts_as_votable
+	
+	mount_uploader :image, ImageUploader
+	belongs_to :user
+	has_many :comments
 
 	validates_presence_of :total_cost, :total_people, :description, :title
 	validates_length_of :description, maximum: 300
@@ -14,10 +21,5 @@ class Vacation < ActiveRecord::Base
   def image_url
     image.medium.url
   end
-
-  mount_uploader :image, ImageUploader
-    
-  belongs_to :user
-  has_many :comments
 
 end

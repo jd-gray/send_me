@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
 
   resources :vacations do 
+    member do
+      put "like", to: "vacations#upvote"
+    end
     resources :comments
   end
 

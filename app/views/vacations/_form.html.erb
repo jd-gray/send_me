@@ -1,8 +1,9 @@
 <%= simple_form_for @vacation do |f| %>
-  <%= f.input :image, required: true %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :total_cost %>
-  <%= f.input :total_people %>
+  <%= f.input :image, required: true, label: "Upload a memory" %>
+  <%= f.input :title, label: "Vacation", placeholder: "Vacation" %>
+  <%= f.input :description, label: "Description", placeholder: "Describe your vacation" %>
+  <%= f.input :total_cost, label: "How much was the trip?", placeholder: "Total Vacation Cost" %>
+  <%= f.input :total_people, label: "Who went?", placeholder: "Total People" %>
   <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Back", vacations_path, class: "btn btn-default" %>
 <% end %>
