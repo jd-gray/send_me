@@ -8,11 +8,11 @@ module API
 
 			def index
 				vacations = Vacation.all
-				respond_with vacations, {message: 'Hellow there!'}
+				respond_with vacations
 			end
 
 			def show
-				vacation = Vacation.find(params[:id])	
+				vacation_find
 				respond_with vacation 
 			end
 

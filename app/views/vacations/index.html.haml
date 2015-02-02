@@ -1,9 +1,47 @@
+%section.center-block#vacation-search
+  %header Search goes here
+  %input{:type => "text"}
+  %button.btn.btn-primary Search
+
+
 .container
-	#vacations.transitions-enabled
-		-@vacations.each do |vacation|
-			.box.panel.panel-default
-				= link_to (image_tag vacation.image.url(:medium)), vacation
-				.panel-footer
-					%p
-					= link_to vacation.title, vacation
-					= vacation.user.username
+  #vacations.transitions-enabled
+    -@vacations.each do |vacation|
+      .box.panel.panel-default
+        = link_to (image_tag vacation.image.url(:medium)), vacation
+        .panel-footer
+          %p
+          = link_to vacation.title, vacation
+          = vacation.user.username
+
+:javascript
+  $(document).ready(function () {
+    $('#vacation-search button').click(function () {
+      console.log("Button clicked");
+      });
+
+      $(document.body.section).append("<p class='.p>Hello!</p>");
+      //$(this).html("Nice!");
+      
+
+      var request = $.ajax({
+        datatype: 'json',
+        type: 'GET',
+        url: 'http://654eb333.ngrok.com/api/v1/users/vacations',
+        data: {prepend: $('#vacation-search input').val()}
+        //console.log(this);  
+      });
+      
+
+      request.done(function(data) {
+        console.log(data);
+
+        for(i=0; i<data.length; i++){
+          console.log(data[i]);
+          
+        }
+      });
+
+    //});
+
+  });
