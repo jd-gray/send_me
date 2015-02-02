@@ -8,4 +8,8 @@ RSpec.describe WelcomeController, :type => :controller do
 		expect(response).to have_http_status(200)
 	end
 
+	it 'responds with success' do
+      expect(response).to be_success
+    end
+
 end
