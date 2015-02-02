@@ -3,6 +3,12 @@
   %input{:type => "text"}
   %button.btn.btn-primary Search
 
+-# .text-center
+-#   - if params[:q] !=nil
+-#     = @vacation['title']
+-#     = @picture['image_url']
+    -# %img.
+
 .container
   #vacations.transitions-enabled
     -@vacations.each do |vacation|
@@ -20,31 +26,36 @@
 
 :javascript
   $(document).ready(function () {
-    $('#vacation-search button').click(function () {
-      console.log("Button clicked");
-      });
+    //$('#vacation-search button').click(function () {
+      //console.log("Button clicked");
+      //});
 
-      $(document.body.section).append("<p class='.p>Hello!</p>");
+      //$(document.body.section).append("<p class='.p>Hello!</p>");
       //$(this).html("Nice!");
-      
+
+      var vacation = {$("#vacation-search").val() }
 
       var request = $.ajax({
-        datatype: 'json',
-        type: 'GET',
-        url: 'http://654eb333.ngrok.com/api/v1/users/vacations',
-        data: {prepend: $('#vacation-search input').val()}
-        //console.log(this);  
+      dataType: 'json',
+      type: 'GET',
+      url: '/api/v1/users/vacations/',
+      data: description
       });
-      
 
-      request.done(function(data) {
-        console.log(data);
+      request.done( function(data) {
+      console.log("Sucess!")
+      console.log(data)
+      printSearchResults(data)
+      })
 
-        for(i=0; i<data.length; i++){
-          console.log(data[i]);
-          
-        }
-      });
+      request.fail(function(data) {
+      console.log("Failed!");
+      console.log(data);
+      })
+
+      request.always(function(data) {
+      console.log("Request was run.");
+      })
 
     //});
 
