@@ -1,21 +1,3 @@
-%section.center-block#vacation-search
-  %header Search goes here
-  %input{:type => "text"}
-  %button.btn.btn-primary Search
-
-%ul.
-  %li.dropdown
-    %form.search.navbar-form.navbar-left{:role => "search"}
-      .form-group
-        = form_tag("/posts", method: "get") do
-        = text_field_tag(:q, nil, placeholder: "Search..")
-        %button.btn-medium.btn-primary.glyphicon.glyphicon-search{:type => "submit"}
-
--# .text-center
--#   - if params[:q] !=nil
--#     = @vacation['title']
--#     = @picture['image_url']
-    -# %img.
 
 .container
   #vacations.transitions-enabled
@@ -31,40 +13,3 @@
           |
           .glyphicon.glyphicon-heart
           = vacation.get_upvotes.count
-
-:javascript
-  $(document).ready(function () {
-    //$('#vacation-search button').click(function () {
-      //console.log("Button clicked");
-      //});
-
-      //$(document.body.section).append("<p class='.p>Hello!</p>");
-      //$(this).html("Nice!");
-
-      var vacation = {$("#vacation-search").val() }
-
-      var request = $.ajax({
-      dataType: 'json',
-      type: 'GET',
-      url: '/api/v1/users/vacations/',
-      data: description
-      });
-
-      request.done( function(data) {
-      console.log("Sucess!")
-      console.log(data)
-      printSearchResults(data)
-      })
-
-      request.fail(function(data) {
-      console.log("Failed!");
-      console.log(data);
-      })
-
-      request.always(function(data) {
-      console.log("Request was run.");
-      })
-
-    //});
-
-  });
