@@ -15,11 +15,13 @@ class Vacation < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(:except => [:user_id, :created_at, :updated_at, :image] , :methods => [:description, :image_url ])
+    super(:except => [:user_id, :created_at, :updated_at] , :methods => [:description])
   end
 
-  def image_url
-    image.medium.url
-  end
+  # json image exceptions.. 
+  # def image_url
+  #   image.medium.url
+  #   image.small.url
+  # end
 
 end

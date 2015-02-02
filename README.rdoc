@@ -1,4 +1,4 @@
-SendMe
+#SendMe
 
 {<img src="https://circleci.com/gh/jd-gray/send_me.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/jd-gray/send_me]
 
@@ -6,3 +6,5 @@ SendMe is a web application that is designed to help users save money to go on v
 
 Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1255500
 
+###What is SendMe?
+Send me is a modern web app that allows users to save money and plan for their vacations. As a member, you are given many tools to track down the weather of the place you'd like to go to, as well as make deposists
