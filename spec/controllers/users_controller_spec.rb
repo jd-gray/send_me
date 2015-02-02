@@ -7,4 +7,9 @@ RSpec.describe UsersController, :type => :controller do
 		assert_response :success
 	end
 
+	it 'responds with success' do
+      expect(response).to be_success
+   end
+
+
 end
