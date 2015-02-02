@@ -1,6 +1,6 @@
 class VacationsController < ApplicationController
 	before_action :vacation_find, only: [:show, :edit, :update, :destroy, :upvote]
-	# before_action :user_authorized?
+	before_action :user_authorized?
 
 	def index
 		# vacations ordered in created order
