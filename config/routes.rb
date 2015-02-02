@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
+  resources :charges
   # path for users to sign up
   get '/signup' => 'users#new'
   # login paths

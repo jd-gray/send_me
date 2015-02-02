@@ -27,15 +27,15 @@ describe "Vacations API", :type => :request do
       expect(response.body).to eq(vacation.to_json)
     end
 
-   it "creates a new vacation" do
-    vacation_attributes = { "vacation" => FactoryGirl.attributes_for(:vacation) }.to_json
+  #  it "creates a new vacation" do
+  #   vacation_attributes = { "vacation" => FactoryGirl.attributes_for(:vacation) }.to_json
 
-    post "/api/v1/users/vacations", vacation_attributes, request_headers
+  #   post "/api/v1/users/vacations", vacation_attributes, request_headers
 
-    vacation = JSON.parse(response.body)
-    expect(response).to have_http_status 201
-    expect(response.location).to eq("http://example.com/api/v1/users/vacations/#{vacation['id']}")
-  end
+  #   vacation = JSON.parse(response.body)
+  #   expect(response).to have_http_status 201
+  #   expect(response.location).to eq("http://example.com/api/v1/users/vacations/#{vacation['id']}")
+  # end
 
   # it "does not create a new vacation with description nil" do
   #   vacation_attributes = { "vacation" => FactoryGirl.attributes_for(:vacation, description: nil) }.to_json

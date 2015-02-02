@@ -30,7 +30,7 @@
   <div class="col-md-10 col-md-offset">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <% simple_form_for ([ @user, @vacation, @comment ]) do |f| %>
+        <%= simple_form_for ([ @user, @vacation, @comment ]) do |f| %>
           <%= f.input :body, label: "Comment", placeholder: "Post a comment, ask a question" %>
           <%= f.button :submit, class: "btn btn-primary" %>  
         <% end %>
