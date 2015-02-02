@@ -3,7 +3,9 @@
     <div class= "panel panel-default">
       <div class="panel-body">
         <div class="col-md-6">
-          <%= image_tag @vacation.image.url(:medium), :id=>"show-image"%>
+          <% if @vacation.image.url.present?  %>
+            <%= image_tag @vacation.image.url(:medium), :id=>"show-image"%>
+            <% end %>
         </div>
 
         <div class="col-md-6">

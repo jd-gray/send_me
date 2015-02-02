@@ -23,6 +23,8 @@
 	# email must be unique and not the same as other users
 	validates_uniqueness_of :email
 
+	validates :image, presence: true, on: :create, on: :update
+
 	# PASSWORD
 	# user must enter a password
 	# user must have a password no shorter then 6 char and no longer then 20 char

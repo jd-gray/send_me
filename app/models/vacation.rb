@@ -7,6 +7,8 @@ class Vacation < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments, dependent: :destroy
 
+  validates :image, presence: true, on: :create, on: :update
+
 	validates_presence_of :total_cost, :total_people, :description, :title
 	validates_length_of :description, maximum: 300
 

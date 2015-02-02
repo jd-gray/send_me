@@ -2,9 +2,38 @@
 
 {<img src="https://circleci.com/gh/jd-gray/send_me.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/jd-gray/send_me]
 
-SendMe is a web application that is designed to help users save money to go on vacation.
 
 Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1255500
 
 ###What is SendMe?
-Send me is a modern web app that allows users to save money and plan for their vacations. As a member, you are given many tools to track down the weather of the place you'd like to go to, as well as make deposists
+Send me is a modern web application that allows users to save money and plan for their vacations in a fun way! As a member, the users are given powerful tools to better plan their vacations.
+
+####-Weather API
+Starting with the weather of the place you'd like to go to, SendMe has the most updated weather API for real time updates on your possible destinations.
+
+####-Stripe API
+With Stripe, users can deposit money to their bank accounts and save up for their dream vacation trip.
+
+####-Act_As_Votable Gem
+This Ruby gem sets up a path that allows the users to favorite a dream trip vacation they see on SendMe. 
+
+####-Masonry-Rails Gem
+With this Ruby gem, the vacations index page takes on a nother level of spiffyness. As the user narrows down the width of the window, Masonry kicks in to beautify the transitions.
+
+##What can a User do?
+	A user can:
+		Sign Up for a new account
+		Delete their account
+		Edit their Account
+		Sign Out
+		Upload an image for their profile
+		Upload a Vacation post
+		Comment on a Vacation post
+		Edit their vacation posts
+		Favorite a vacation post
+		View another user's vacations
+
+##What are the restrains on a User?
+	A User can't:
+		Edit another user's account
+		Edit another user's vacations 

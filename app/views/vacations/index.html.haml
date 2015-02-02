@@ -1,14 +1,14 @@
-
 .container
   #vacations.transitions-enabled
     -@vacations.each do |vacation|
       .box.panel.panel-default
-        = link_to (image_tag vacation.image.url(:medium)), vacation
+        - if vacation.image.url.present?
+          = link_to (image_tag vacation.image.url(:medium)) , vacation
         .panel-footer
           %p
           = link_to vacation.title, vacation
           %p
-          = image_tag vacation.user.image.url(:small)
+          = image_tag vacation.user.image.url(:small) if current_user.image.url.present?
           = vacation.user.username
           |
           .glyphicon.glyphicon-heart

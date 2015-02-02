@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
         <li><%= link_to "Add Vacation", new_vacation_path %></li>
-        <li><br/><%= image_tag current_user.image.url(:small) %><li>
+        <li><br/><%= image_tag current_user.image.url(:small) if current_user.image.url.present? %><li>
         <li><%= link_to current_user.username, user_path(current_user.id) %></li>
         <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
       <% else %>

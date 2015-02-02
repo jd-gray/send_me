@@ -8,7 +8,7 @@
 
 				<div class="panel-body">
 					<div class="col-md-12">
-						<p class="text-center"><%= image_tag @user.image.url(:medium) %></p>
+						<p class="text-center"><%= image_tag @user.image.url(:medium) if current_user.image.url.present? %></p>
 						<p class="text-center"><%= @user.username %></p>
 						<p class="text-center"><%= @user.email %></p>
 						<%= link_to "Edit Account", edit_user_path, class: "btn btn-primary" %>
