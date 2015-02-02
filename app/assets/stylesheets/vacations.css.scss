@@ -3,3 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#vacations.transitions-enabled{
+    color: white;
+    &:hover{
+        box-shadow: 0 0 1em gray;
+    }
+
+    .box.panel.panel-default{
+        a{
+            img{
+                max-width: 100%;
+            }
+
+        }
+    }
+}
