@@ -7,9 +7,8 @@
 			<%= simple_form_for :login do |f| %>
 				<%= f.input :email, placeholder: "Email", required: true %>
 				<%= f.input :password, placeholder: "Password", required: true, input_html: { maxlength: 20 } %>
-				<%= f.button :submit %>
+				<%= f.button :submit, 'Log In', class: 'btn btn-primary' %>
 			<% end %>
-			<%= button_to "Back", root_path, :class => "button-primary", :method => :get  %>
 		</div>
 	</div>
 </div>

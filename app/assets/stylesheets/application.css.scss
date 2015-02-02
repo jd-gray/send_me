@@ -22,7 +22,38 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+body {
+	background-color: #DADFE1;
+}
+
 ul {
     list-style: none;
     padding: 0;
+}
+
+#vacations.transitions-enabled {
+	margin: 0 auto;
+	width: 100%;
+	.box.panel.panel-default.masonry-brick{
+		border: none;
+		margin: 3px;
+		border-radius: 0;
+		width: 270px;
+	  	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.22);
+	  	border-radius: 7px;
+	  	text-align: center;
+	  	.panel-footer{
+	  		color: white;
+	  		background-color: #4183D7;
+	  		font-weight: 900;
+	  	}
+		a {
+			color: white;
+			font-weight: 900;
+			&:hover {
+				text-decoration: none;
+				color: tomato;
+			}
+	  	}
+	}
 }
