@@ -31,4 +31,6 @@ RSpec.describe Vacation, :type => :model do
 	# ASSOCIATION
     it { is_expected.to belong_to(:user) }
 
+
 end
+
