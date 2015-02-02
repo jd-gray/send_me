@@ -16,16 +16,16 @@ describe "Vacations API", :type => :request do
     expect(vacations.count).to eq(10)
   end
 
-    it "returns a specific vacation" do
-      vacation = FactoryGirl.create(:vacation)
+    # it "returns a specific vacation" do
+    #   vacation = FactoryGirl.create(:vacation)
 
-      get "/api/v1/users/vacations/#{vacation.id}"
+    #   get "/api/v1/users/vacations/#{vacation.id}"
 
-      # returned_vacation = JSON.parse(response.body)
+    #   # returned_vacation = JSON.parse(response.body)
 
-      expect(response).to have_http_status 200
-      expect(response.body).to eq(vacation.to_json)
-    end
+    #   expect(response).to have_http_status 200
+    #   expect(response.body).to eq(vacation.to_json)
+    # end
 
   #  it "creates a new vacation" do
   #   vacation_attributes = { "vacation" => FactoryGirl.attributes_for(:vacation) }.to_json
