@@ -39,7 +39,7 @@
         <% end %>
       </div>
       <div class="panel-body">
-        <% @comments.each do |comment| %>
+        <% @vacation.comments.each do |comment| %>
           <div><%= comment.body %></div>
           <div><%= image_tag current_user.image.url(:small) %><%= comment.user.username %> | <%= time_ago_in_words(comment.created_at)%></div>
           <br/>
