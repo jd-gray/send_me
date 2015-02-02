@@ -4,11 +4,15 @@ class Vacation < ActiveRecord::Base
 	validates_length_of :description, maximum: 300
 
   def description
-    "This vacation for #{total_people} was only #{total_cost}!"
+    "This vacation for #{total_people} was only $#{total_cost}!"
   end
 
   def as_json(options={})
-    super(:except => [:user_id, :create_at, :updated_at], :methods => [:description])
+    super(:except => [:user_id, :create_at, :updated_at, :image] , :methods => [:description, :image_url ])
+  end
+
+  def image_url
+    image.medium.url
   end
 
   mount_uploader :image, ImageUploader

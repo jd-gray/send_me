@@ -20,7 +20,7 @@ module API
 				vacation_find
 				# current user id links to the vacations create method
 				# current_user = User.find(session[:user_id])
-				# @vacation = current_user.vacations.build(vacation_params)
+				# vacation = current_user.vacations.build(vacation_params)
 				if vacation.save
 					respond_with vacation, location: [:api, vacation]
 				else 
