@@ -9,6 +9,15 @@ Rails.application.routes.draw do
   # logout path
   delete '/logout' => 'sessions#destroy'
 
+  # API routes
+  namespace :api, defaults: { format: "json"} do #, :contraints => {:subdomain => "api"}, path: '/'
+    namespace :v1 do
+      resource :users, only: :index do
+        resources :vacations, only: [:index, :show, :create, :update, :destroy]
+      end
+    end
+  end
+
   resources :vacations do 
     member do
       put "like", to: "vacations#upvote"
