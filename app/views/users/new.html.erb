@@ -10,9 +10,8 @@
 				<%= f.input :email, placeholder: "Email" %>
 				<%= f.input :password, placeholder: "Password", hint: "No Special Characters" %>
 				<%= f.input :password_confirmation, placeholder: "Confirm Password" %>
-				<%= f.button :submit %>
+				<%= f.button :submit, class: "btn btn-primary" %>
 			<% end %>
-			<%= button_to "Back", root_path, :class => "button-primary", :method => :get  %>
 		</div>
 	</div>
 </div>

@@ -14,8 +14,10 @@
 	height: 800px;
 	border-bottom: 1px solid black;
 	#logobox{
+		font-weight: 900;
 		img {
 			border-radius: 10px;
+			border: 2px solid #4183D7;
 		}
 		margin: 0 auto;
 		width: 50%;
@@ -47,6 +49,7 @@ input#q {
 	border: 0;
 }
 #slide2{
+	background-color: white;
 	padding-top: 20px;
 	height: 450px;
 	img {
@@ -70,6 +73,7 @@ input#q {
 }
 
 #slide4{
+	background-color: white;
 	#button{
 		padding-top: 50px;
 		padding-bottom: 50px;
@@ -89,11 +93,15 @@ input#q {
 }
 
 .signup {
-	top: 150px;
+	top: 100px;
 }
 
 .login {
 	top: 200px;
+	.panel-heading{
+		color: white;
+		background: #4183D7;
+	}
 }
 // below is for the weather API search
 .icon{
